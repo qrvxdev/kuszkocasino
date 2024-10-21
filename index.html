@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symulator Kasyna</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <audio id="muzyka" loop>
+        <source src="casino.mp3" type="audio/mpeg">
+        Twoja przeglądarka nie obsługuje elementu audio.
+    </audio>
+    
+    <div id="welcome">
+        <h1>Witaj w Kuszko Casino!</h1>
+        <button onclick="startNewGame()">Rozpocznij grę</button>
+    </div>
+
+    <div class="container" style="display: none;">
+        <h1>Symulator Kasyna</h1>
+        <div id="info">
+            <p>Twoja kasa: <span id="kasa">1000</span> PLN</p>
+            <p>Podatki do zapłaty: <span id="podatki">0</span> PLN</p>
+        </div>
+        <div id="gry">
+            <button onclick="graj('ruletka')">Ruletka</button>
+            <button onclick="graj('blackjack')">Blackjack</button>
+            <button onclick="graj('sloty')">Sloty</button>
+        </div>
+        <div id="wynik"></div>
+        <button id="plac-podatki" onclick="placPodatki()">Zapłać podatki</button>
+        <canvas id="visualizer"></canvas>
+    </div>
+    
+    <div id="controls">
+        <button onclick="changeVolume(-0.1)">-</button>
+        <button onclick="changeVolume(0.1)">+</button>
+        <p>Głośność: <span id="volume-level">100%</span></p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
